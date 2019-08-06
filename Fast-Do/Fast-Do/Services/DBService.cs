@@ -1,24 +1,59 @@
 ﻿using SQLite;
 using System.Collections.Generic;
-using System.Linq;
+using System.Collections.ObjectModel;
 
 namespace Fast_Do.Services
 {
-    public class DBService
+    public class DBService<T> where T : new()
     {
-        private SQLiteConnection sqliteconnection;
+        protected static SQLiteConnection DB;
 
-        private const string DbFileName = "Items.db3";
-
-        public void Insert(object obj)
+        public DBService()
         {
-            sqliteconnection.Insert(obj);
+            if (DB == null)
+                DB = DBGetConnection.GetConnection();
+
+            DB.CreateTable<T>();
         }
 
-        public List<object> SelectAll()
+        public virtual int Insert(T obj)
         {
-            return (from data in sqliteconnection.Table<object>()
-                    select data).ToList();
+            return DB.InsertOrReplace(obj);
+        }
+
+        public virtual void InsertList(List<T> lista)
+        {
+            DB.InsertAll(lista);
+        }
+
+        public virtual List<T> SelectAll()
+        {
+            return DB.Table<T>().ToList();
+        }
+
+        public virtual T SelectOne()
+        {
+            return DB.Table<T>().FirstOrDefault();
+        }
+
+        public void Update(T obj)
+        {
+            DB.Update(obj);
+        }
+
+        public virtual void Delete(int id)
+        {
+            DB.Delete<T>(id);
+        }
+
+        public int Count()
+        {
+            return DB.Table<T>().Count();
+        }
+
+        public void DeleteAll()
+        {
+            DB.DeleteAll<T>();
         }
     }
 }

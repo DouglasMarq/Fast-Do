@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 using Fast_Do.Models;
 using Fast_Do.Services;
@@ -30,9 +28,7 @@ namespace Fast_Do.Views
                 Text = txtTitle.Text,
                 Description = txtDesc.Text
             };
-            new DBService().Insert(Item);
-            Console.WriteLine(new DBService().SelectAll());
-            //MessagingCenter.Send(this, "AddItem", Item);
+            new AccessItem().Insert(Item);
             await Navigation.PopModalAsync();
         }
 
