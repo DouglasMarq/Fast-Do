@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 using Fast_Do.Models;
 using Fast_Do.Views;
+using Fast_Do.Services;
 
 namespace Fast_Do.ViewModels
 {
@@ -17,7 +18,7 @@ namespace Fast_Do.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Navegar";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
@@ -25,7 +26,12 @@ namespace Fast_Do.ViewModels
             {
                 var newItem = item as Item;
                 Items.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
+            });
+
+            MessagingCenter.Subscribe<NewItemPage, Item>(this, "RemoveItem", async (obj, item) =>
+            {
+                var oldItem = item as Item;
+                Items.Remove(oldItem);
             });
         }
 
@@ -39,7 +45,7 @@ namespace Fast_Do.ViewModels
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = new DBService().SelectAll();
                 foreach (var item in items)
                 {
                     Items.Add(item);

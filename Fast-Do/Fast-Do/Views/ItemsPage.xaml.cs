@@ -12,9 +12,7 @@ using Fast_Do.Views;
 using Fast_Do.ViewModels;
 
 namespace Fast_Do.Views
-{
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
+{ 
     [DesignTimeVisible(false)]
     public partial class ItemsPage : ContentPage
     {
@@ -23,7 +21,14 @@ namespace Fast_Do.Views
         public ItemsPage()
         {
             InitializeComponent();
-
+            try
+            {
+               
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
             BindingContext = viewModel = new ItemsViewModel();
         }
 

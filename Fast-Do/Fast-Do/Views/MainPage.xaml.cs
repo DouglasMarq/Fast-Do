@@ -18,9 +18,7 @@ namespace Fast_Do.Views
         public MainPage()
         {
             InitializeComponent();
-
             MasterBehavior = MasterBehavior.Popover;
-
             MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
         }
 

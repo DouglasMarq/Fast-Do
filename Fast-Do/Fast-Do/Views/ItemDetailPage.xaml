@@ -7,11 +7,13 @@
              x:Class="Fast_Do.Views.ItemDetailPage"
              Title="{Binding Title}">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Remover" Clicked="Remove_Clicked" />
+    </ContentPage.ToolbarItems>
+
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small"/>
+        <Label Text="{Binding Item.Text}" d:Text="Título" x:Name="lblTitle" FontSize="Small"/>
+        <Label Text="{Binding Item.Description}" d:Text="Descrição" x:Name="lblDesc" FontSize="Small"/>
     </StackLayout>
     
 </ContentPage>

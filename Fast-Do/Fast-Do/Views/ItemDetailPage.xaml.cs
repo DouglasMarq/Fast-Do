@@ -28,12 +28,17 @@ namespace Fast_Do.Views
 
             var item = new Item
             {
-                Text = "Item 1",
-                Description = "This is an item description."
+                Text = lblTitle.Text,
+                Description = lblDesc.Text
             };
 
             viewModel = new ItemDetailViewModel(item);
             BindingContext = viewModel;
+        }
+
+        private void Remove_Clicked(object sender, EventArgs e)
+        {
+            //MessagingCenter.Send(this, "RemoveItem", Item);
         }
     }
 }

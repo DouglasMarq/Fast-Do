@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Fast_Do.Models;
+using Fast_Do.Services;
 
 namespace Fast_Do.Views
 {
@@ -18,19 +19,20 @@ namespace Fast_Do.Views
         public NewItemPage()
         {
             InitializeComponent();
-
-            Item = new Item
-            {
-                Text = "Item name",
-                Description = "This is an item description."
-            };
-
             BindingContext = this;
         }
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
+            Item = new Item
+            {
+                Id = Item.Id + 1,
+                Text = txtTitle.Text,
+                Description = txtDesc.Text
+            };
+            new DBService().Insert(Item);
+            Console.WriteLine(new DBService().SelectAll());
+            //MessagingCenter.Send(this, "AddItem", Item);
             await Navigation.PopModalAsync();
         }
 

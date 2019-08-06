@@ -8,11 +8,9 @@ namespace Fast_Do
 {
     public partial class App : Application
     {
-
         public App()
         {
             InitializeComponent();
-
             DependencyService.Register<MockDataStore>();
             MainPage = new MainPage();
         }
