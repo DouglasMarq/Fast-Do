@@ -1,5 +1,5 @@
 # Fast-Do
 
-~XAMARIN~ 
+-XAMARIN- 
 
-Aplicativo LEVE de anotações.
+Aplicativo LEVE de anotações com banco de dados local.
