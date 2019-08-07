@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using System;
 
 namespace Fast_Do.Models
 {
@@ -11,5 +12,7 @@ namespace Fast_Do.Models
         public string Text { get; set; }
 
         public string Description { get; set; }
+
+        public string Date { get; set; }
     }
 }

@@ -4,6 +4,7 @@ using Xamarin.Forms;
 
 using Fast_Do.Models;
 using Fast_Do.Services;
+using Acr.UserDialogs;
 
 namespace Fast_Do.Views
 {
@@ -21,14 +22,26 @@ namespace Fast_Do.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            Item item = new Item
+            if (string.IsNullOrWhiteSpace(txtTitle.Text))
             {
-                Id = new AccessItem().Count() + 1,
-                Text = txtTitle.Text,
-                Description = txtDesc.Text
+                UserDialogs.Instance.Alert("Campo Título está vazio", "Aviso", "OK");
+            }
+            else if (string.IsNullOrWhiteSpace(txtDesc.Text))
+            {
+                UserDialogs.Instance.Alert("Campo Anotação está vazio", "Aviso", "OK");
+            }
+            else
+            {
+                Item item = new Item
+                {
+                    Id = new AccessItem().Count() + 1,
+                    Text = txtTitle.Text,
+                    Description = txtDesc.Text,
+                    Date = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss")
             };
-            new AccessItem().Insert(item);
-            await Navigation.PopModalAsync();
+                new AccessItem().Insert(item);
+                await Navigation.PopModalAsync();
+            }
         }
 
         async void Cancel_Clicked(object sender, EventArgs e)

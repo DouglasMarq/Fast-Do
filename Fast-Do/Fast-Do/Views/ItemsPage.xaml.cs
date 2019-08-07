@@ -21,7 +21,6 @@ namespace Fast_Do.Views
         public ItemsPage()
         {
             InitializeComponent();
-
             BindingContext = ctx;
         }
 

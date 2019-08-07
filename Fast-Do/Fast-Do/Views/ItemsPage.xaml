@@ -20,6 +20,7 @@
                         <StackLayout Padding="10">
                             <Label Text="{Binding Text}" FontSize="15" FontAttributes="Bold"/>
                             <Label Text="{Binding Description}" FontSize="13" />
+                            <Label Text="{Binding Date}" FontSize="12" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

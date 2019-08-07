@@ -14,10 +14,10 @@
     
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
-            <Label Text="Título" FontSize="Medium" />
+            <Label Text="Título" x:Name="lblTitle" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
             <Entry Text="{Binding Item.Text}" Placeholder="Título" x:Name="txtTitle" FontSize="Small" />
-            <Label Text="Descrição" FontSize="Medium" />
-            <Entry Text="{Binding Item.Description}" x:Name="txtDesc" Placeholder="Descrição" FontSize="Small" Margin="0" />
+            <Label Text="Descrição" FontSize="Medium" x:Name="lblText" HorizontalOptions="CenterAndExpand"/>
+            <Entry Text="{Binding Item.Description}" x:Name="txtDesc" Placeholder="Anotação" FontSize="Small" Margin="0" />
         </StackLayout>
     </ContentPage.Content>
     

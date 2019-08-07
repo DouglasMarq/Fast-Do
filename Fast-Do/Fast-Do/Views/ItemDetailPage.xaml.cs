@@ -18,8 +18,8 @@ namespace Fast_Do.Views
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
             InitializeComponent();
-
             BindingContext = this.viewModel = viewModel;
+            this.Title = viewModel.Item.Text;
         }
 
         public ItemDetailPage()
