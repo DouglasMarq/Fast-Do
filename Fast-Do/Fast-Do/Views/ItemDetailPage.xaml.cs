@@ -38,7 +38,8 @@ namespace Fast_Do.Views
 
         private void Remove_Clicked(object sender, EventArgs e)
         {
-            //MessagingCenter.Send(this, "RemoveItem", Item);
+            new AccessItem().Delete(viewModel.Item.Id);
+            Navigation.PopAsync();
         }
     }
 }

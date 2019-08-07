@@ -35,17 +35,13 @@ namespace Fast_Do.ViewModels
             });
         }
 
-        async Task ExecuteLoadItemsCommand()
+        public async Task ExecuteLoadItemsCommand()
         {
-            if (IsBusy)
-                return;
-
             IsBusy = true;
-
             try
             {
                 Items.Clear();
-                var items = new DBService().SelectAll();
+                var items = new AccessItem().SelectAll();
                 foreach (var item in items)
                 {
                     Items.Add(item);

@@ -13,20 +13,13 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout>
-        <ListView>
+        <ListView x:Name="listItems" ItemSelected="OnItemSelected" HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <ViewCell >
                         <StackLayout Padding="10">
-                            <Label Text="{Binding Text}"
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                            <Label Text="{Binding Description}" 
-                                d:Text="Item descripton"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
+                            <Label Text="{Binding Text}" FontSize="15" FontAttributes="Bold"/>
+                            <Label Text="{Binding Description}" FontSize="13" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

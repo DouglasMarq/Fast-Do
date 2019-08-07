@@ -12,7 +12,6 @@ namespace Fast_Do.Views
     [DesignTimeVisible(false)]
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
 
         public NewItemPage()
         {
@@ -22,13 +21,13 @@ namespace Fast_Do.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            Item = new Item
+            Item item = new Item
             {
-                Id = Item.Id + 1,
+                Id = new AccessItem().Count() + 1,
                 Text = txtTitle.Text,
                 Description = txtDesc.Text
             };
-            new AccessItem().Insert(Item);
+            new AccessItem().Insert(item);
             await Navigation.PopModalAsync();
         }
 

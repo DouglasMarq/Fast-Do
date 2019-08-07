@@ -12,7 +12,9 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout Spacing="20" Padding="15">
+        <Label Text="Título"/>
         <Label Text="{Binding Item.Text}" d:Text="Título" x:Name="lblTitle" FontSize="Small"/>
+        <Label Text="Anotação"/>
         <Label Text="{Binding Item.Description}" d:Text="Descrição" x:Name="lblDesc" FontSize="Small"/>
     </StackLayout>
     
