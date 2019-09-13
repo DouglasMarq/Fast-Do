@@ -26,14 +26,14 @@ namespace Fast_Do.Views
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
+            // Manually deselect item.
+            listItems.SelectedItem = null;
+
             var item = args.SelectedItem as Item;
             if (item == null)
                 return;
 
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-
-            // Manually deselect item.
-            listItems.SelectedItem = null;
         }
 
         async void AddItem_Clicked(object sender, EventArgs e)
@@ -46,6 +46,16 @@ namespace Fast_Do.Views
             base.OnAppearing();
             await ctx.ExecuteLoadItemsCommand();
             listItems.ItemsSource = ctx.Items;
+        }
+
+        private void BtnHeart_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnSend_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

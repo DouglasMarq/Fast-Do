@@ -14,5 +14,7 @@ namespace Fast_Do.Models
         public string Description { get; set; }
 
         public string Date { get; set; }
+
+        public string BoxColor { get; set; }
     }
 }

@@ -37,8 +37,10 @@ namespace Fast_Do.Views
                     Id = new AccessItem().Count() + 1,
                     Text = txtTitle.Text,
                     Description = txtDesc.Text,
-                    Date = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss")
-            };
+                    Date = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss"),
+                    BoxColor = "#03a9f4"
+
+                };
                 new AccessItem().Insert(item);
                 await Navigation.PopModalAsync();
             }

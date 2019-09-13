@@ -31,6 +31,9 @@ namespace Fast_Do.Views
                     case (int)MenuItemType.Browse:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
+                    case (int)MenuItemType.Favorite:
+                        MenuPages.Add(id, new NavigationPage(new FavoritePage()));
+                        break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;

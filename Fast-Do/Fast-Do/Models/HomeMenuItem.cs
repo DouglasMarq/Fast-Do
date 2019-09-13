@@ -7,6 +7,7 @@ namespace Fast_Do.Models
     public enum MenuItemType
     {
         Browse,
+        Favorite,
         About
     }
     public class HomeMenuItem

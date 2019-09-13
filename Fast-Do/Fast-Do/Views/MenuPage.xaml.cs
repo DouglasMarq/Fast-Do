@@ -21,6 +21,7 @@ namespace Fast_Do.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Anotações" },
+                new HomeMenuItem {Id = MenuItemType.Favorite, Title="Favoritos" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="Sobre" }
             };
 

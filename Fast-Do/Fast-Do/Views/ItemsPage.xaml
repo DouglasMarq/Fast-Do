@@ -13,19 +13,46 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout>
-        <ListView x:Name="listItems" ItemSelected="OnItemSelected" HasUnevenRows="True">
+        <ListView x:Name="listItems" 
+                  ItemSelected="OnItemSelected" 
+                  HasUnevenRows="True"
+                  SeparatorVisibility="None"
+                  CachingStrategy="RecycleElement">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell >
-                        <StackLayout Padding="10">
-                            <Label Text="{Binding Text}" FontSize="15" FontAttributes="Bold"/>
-                            <Label Text="{Binding Description}" FontSize="13" />
-                            <Label Text="{Binding Date}" FontSize="12" />
-                        </StackLayout>
+                    <ViewCell>
+                        <Frame Padding="0" Margin="5" HasShadow="True" CornerRadius="0">
+                            <StackLayout Padding="0" Orientation="Horizontal" Margin="0">
+                                <BoxView Color="{Binding BoxColor}" WidthRequest="4" Margin="0"/>
+                                <Grid VerticalOptions="FillAndExpand" Padding="0" Margin="0" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0" VerticalOptions="FillAndExpand" Padding="0" Margin="0" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label FontAttributes="Bold" Grid.Row="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="18" Text="{Binding Text}" Margin="0" />
+                                        <Label Grid.Row="1" VerticalTextAlignment="Start" FontSize="15" Text="{Binding Description}"  Margin="0" />
+                                        <StackLayout Grid.Row="2" Orientation="Horizontal">
+                                            <Image WidthRequest="15" HeightRequest="15" Source="ic_calendar" VerticalOptions="Center" />
+                                            <Label HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12" Text="{Binding Date}"/>
+                                        </StackLayout>
+                                    </Grid>
+                                    <StackLayout Orientation="Horizontal" Grid.Row="1" Padding="5"  Margin="-6,0,0,0" HorizontalOptions="FillAndExpand" BackgroundColor="#F1F1F1">
+                                        <Button x:Name="btnHeart" ImageSource="ico_heart" Clicked="BtnHeart_Clicked" CommandParameter="{Binding .}" BackgroundColor="Transparent" VerticalOptions="Center" WidthRequest="35" HeightRequest="35" HorizontalOptions="EndAndExpand"/>
+                                        <Button x:Name="btnSend" ImageSource="ico_sent" Clicked="BtnSend_Clicked" CommandParameter="{Binding .}" BackgroundColor="Transparent" VerticalOptions="Center" WidthRequest="35" HeightRequest="35" HorizontalOptions="End"/>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+                        </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
-    
+
 </ContentPage>
