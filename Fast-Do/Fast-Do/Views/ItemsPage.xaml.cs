@@ -50,12 +50,12 @@ namespace Fast_Do.Views
 
         private void BtnHeart_Clicked(object sender, EventArgs e)
         {
-
+            var selectedItem = (Item)((Button)sender).CommandParameter;
         }
 
         private void BtnSend_Clicked(object sender, EventArgs e)
         {
-
+            var selectedItem = (Item)((Button)sender).CommandParameter;
         }
     }
 }

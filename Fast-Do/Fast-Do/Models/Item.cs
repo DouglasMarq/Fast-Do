@@ -16,5 +16,7 @@ namespace Fast_Do.Models
         public string Date { get; set; }
 
         public string BoxColor { get; set; }
+
+        public bool Favorited { get; set; }
     }
 }
