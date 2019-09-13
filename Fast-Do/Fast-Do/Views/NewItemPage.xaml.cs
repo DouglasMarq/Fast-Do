@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Fast_Do.Models;
 using Fast_Do.Services;
 using Acr.UserDialogs;
+using System.Collections.Generic;
 
 namespace Fast_Do.Views
 {
@@ -13,11 +14,30 @@ namespace Fast_Do.Views
     [DesignTimeVisible(false)]
     public partial class NewItemPage : ContentPage
     {
+        List<string> Colors = new List<string>()
+        {
+            "#55efc4",
+            "#4cd137",
+            "#fbc531",
+            "#00cec9",
+            "#9c88ff",
+            "#0097e6",
+            "#c56cf0",
+            "#18dcff",
+            "#7158e2",
+            "#4b4b4b"
+        };
 
         public NewItemPage()
         {
             InitializeComponent();
             BindingContext = this;
+        }
+
+        private string pickColor()
+        {
+            var random = new Random();
+            return Colors[random.Next(Colors.Count)];
         }
 
         async void Save_Clicked(object sender, EventArgs e)
@@ -38,7 +58,7 @@ namespace Fast_Do.Views
                     Text = txtTitle.Text,
                     Description = txtDesc.Text,
                     Date = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss"),
-                    BoxColor = "#03a9f4"
+                    BoxColor = pickColor()
 
                 };
                 new AccessItem().Insert(item);
