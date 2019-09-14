@@ -137,9 +137,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Fast-Do\Fast-Do.csproj">
+    <ProjectReference Include="..\Fast-Do\Fast_Do.csproj">
       <Project>{9db471c4-7a89-4073-8aef-c2a5df724846}</Project>
-      <Name>Fast-Do</Name>
+      <Name>Fast_Do</Name>
     </ProjectReference>
     <ProjectReference Include="..\Fast_Do\Fast_Do.csproj">
       <Project>{76906324-B943-4793-8B9F-1C7547DBFBAF}</Project>

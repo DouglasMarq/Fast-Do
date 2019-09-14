@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fast-Do.Android", "Fast-Do\Fast-Do.Android\Fast-Do.Android.csproj", "{D20F1451-F3BA-4F40-9522-A1BB1C2B8EE5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fast_Do.Android", "Fast-Do\Fast-Do.Android\Fast_Do.Android.csproj", "{D20F1451-F3BA-4F40-9522-A1BB1C2B8EE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fast-Do.iOS", "Fast-Do\Fast-Do.iOS\Fast-Do.iOS.csproj", "{86B3A167-C60E-457B-B1B3-7C52A333ED73}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fast_Do.iOS", "Fast-Do\Fast-Do.iOS\Fast_Do.iOS.csproj", "{86B3A167-C60E-457B-B1B3-7C52A333ED73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fast-Do", "Fast-Do\Fast-Do\Fast-Do.csproj", "{9DB471C4-7A89-4073-8AEF-C2A5DF724846}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fast_Do", "Fast-Do\Fast-Do\Fast_Do.csproj", "{9DB471C4-7A89-4073-8AEF-C2A5DF724846}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
