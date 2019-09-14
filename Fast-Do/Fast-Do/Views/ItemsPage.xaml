@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:custom="clr-namespace:Fast_Do.Views.Custom"
              mc:Ignorable="d"
              x:Class="Fast_Do.Views.ItemsPage"
              Title="{Binding Title}"
@@ -43,8 +44,8 @@
                                         </StackLayout>
                                     </Grid>
                                     <StackLayout Orientation="Horizontal" Grid.Row="1" Padding="5"  Margin="-6,0,0,0" HorizontalOptions="FillAndExpand" BackgroundColor="#F1F1F1">
-                                        <Button x:Name="btnHeart" ImageSource="ico_heart" Clicked="BtnHeart_Clicked" CommandParameter="{Binding .}" BackgroundColor="Transparent" VerticalOptions="Center" WidthRequest="35" HeightRequest="35" HorizontalOptions="EndAndExpand"/>
-                                        <Button x:Name="btnSend" ImageSource="ico_sent" Clicked="BtnSend_Clicked" CommandParameter="{Binding .}" BackgroundColor="Transparent" VerticalOptions="Center" WidthRequest="35" HeightRequest="35" HorizontalOptions="End"/>
+                                        <custom:CustomButton x:Name="btnHeart" ImageSource="ico_heart" Clicked="BtnHeart_Clicked" CommandParameter="{Binding .}" BackgroundColor="Transparent" VerticalOptions="Center" WidthRequest="35" HeightRequest="35" HorizontalOptions="EndAndExpand"/>
+                                        <custom:CustomButton x:Name="btnSend" ImageSource="ico_sent" Clicked="BtnSend_Clicked" CommandParameter="{Binding .}" BackgroundColor="Transparent" VerticalOptions="Center" WidthRequest="35" HeightRequest="35" HorizontalOptions="End"/>
                                     </StackLayout>
                                 </Grid>
                             </StackLayout>
