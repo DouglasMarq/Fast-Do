@@ -15,7 +15,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer(typeof(CustomButton), typeof(CustomButtonRenderer))]
-namespace Fast_Do.Droid
+namespace Fast_Do.Droid.Renderers
 {
     public class CustomButtonRenderer : ButtonRenderer
     {
