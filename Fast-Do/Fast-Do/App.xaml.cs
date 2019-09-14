@@ -11,7 +11,10 @@ namespace Fast_Do
         public App()
         {
             InitializeComponent();
-            MainPage = new MainPage();
+#if DEBUG
+            HotReloader.Current.Run(this);
+#endif
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
