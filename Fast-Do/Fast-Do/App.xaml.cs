@@ -14,7 +14,7 @@ namespace Fast_Do
 #if DEBUG
             HotReloader.Current.Run(this);
 #endif
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
