@@ -33,7 +33,7 @@
                 <Button Margin="20,0,20,0" 
                          HeightRequest="50" 
                          TextColor="White" 
-                         Text="Login"  
+                         Text="Login"  Clicked="Login_Clicked"
                          CornerRadius="12"
                          BackgroundColor="{StaticResource primary}"
                          HorizontalOptions="FillAndExpand"/>
@@ -41,7 +41,7 @@
                 <Button Margin="20,0,20,0" 
                          HeightRequest="50" 
                          TextColor="White" 
-                         Text="Register"  Clicked="Handle_Clicked"
+                         Text="Register"  Clicked="Register_Clicked"
                          CornerRadius="12"
                          BackgroundColor="{StaticResource primary}"
                          HorizontalOptions="FillAndExpand"/>
