@@ -46,9 +46,9 @@
                          BackgroundColor="{StaticResource primary}"
                          HorizontalOptions="FillAndExpand"/>
 
-                <Label Text="Forgot password" 
+                <!--<Label Text="Esqueci minha senha" 
                         HorizontalOptions="Center" 
-                        TextColor="Blue"/>
+                        TextColor="White"/>-->
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
