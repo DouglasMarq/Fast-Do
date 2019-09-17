@@ -19,7 +19,22 @@ namespace Fast_Do.Views
 
         private async void Register_Clicked(object sender, System.EventArgs e)
         {
-            //await Navigation.PushModalAsync(new SignUpPage());
+            if (!string.IsNullOrWhiteSpace(UserEntry.Text))
+            {
+                await Navigation.PushAsync(new NavigationPage(new SignUpPage(UserEntry.Text)));
+            }
+            else if (!string.IsNullOrWhiteSpace(PassEntry.Text))
+            {
+                await Navigation.PushAsync(new NavigationPage(new SignUpPage(null, PassEntry.Text)));
+            }
+            else if (!string.IsNullOrWhiteSpace(PassEntry.Text) && !string.IsNullOrWhiteSpace(PassEntry.Text))
+            {
+                await Navigation.PushAsync(new NavigationPage(new SignUpPage(UserEntry.Text, PassEntry.Text)));
+            }
+            else
+            {
+                await Navigation.PushAsync(new NavigationPage(new SignUpPage()));
+            }
         }
 
         private async void Login_Clicked(object sender, System.EventArgs e)

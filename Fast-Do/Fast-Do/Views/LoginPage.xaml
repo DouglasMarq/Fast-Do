@@ -22,12 +22,14 @@
 
                 <Entry  Margin="20,40,20,0" 
                          HeightRequest="50" 
-                         Placeholder="E-mail">
+                         Placeholder="E-mail"
+                        x:Name="UserEntry">
                 </Entry>
 
                 <Entry Margin="20,0,20,0" 
                         HeightRequest="50" IsPassword="true"
-                        Placeholder="Password">
+                        Placeholder="Password"
+                       x:Name="PassEntry">
                 </Entry>
 
                 <Button Margin="20,0,20,0" 
