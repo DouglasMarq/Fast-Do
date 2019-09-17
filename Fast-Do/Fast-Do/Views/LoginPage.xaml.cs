@@ -16,5 +16,11 @@ namespace Fast_Do.Views
         {
             InitializeComponent();
         }
+
+        private async void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            ((App)App.Current).MainPage = new MainPage();
+            //await Navigation.PushModalAsync(new SignUpPage());
+        }
     }
 }

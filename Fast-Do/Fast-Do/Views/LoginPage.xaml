@@ -5,16 +5,15 @@
              x:Class="Fast_Do.Views.LoginPage">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="primary">#ff3467</Color>
+            <Color x:Key="primary">#474545</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Spacing="10" >
-
+        <ScrollView BackgroundColor="#696565">
+            <StackLayout Spacing="10">
                 <Label HeightRequest="110"  
                           HorizontalOptions="FillAndExpand" 
-                          Text="UiApp" 
+                          Text="Fast-Do" 
                           BackgroundColor="{StaticResource primary}"
                           TextColor="White" 
                           FontSize="40" 
@@ -23,24 +22,19 @@
 
                 <Entry  Margin="20,40,20,0" 
                          HeightRequest="50" 
-                         Placeholder="Email">
-                    <Entry.Effects>
-                        <local:BackgroundEntryEffect />
-                    </Entry.Effects>
+                         Placeholder="E-mail">
                 </Entry>
 
                 <Entry Margin="20,0,20,0" 
                         HeightRequest="50" IsPassword="true"
                         Placeholder="Password">
-                    <Entry.Effects>
-                        <local:BackgroundEntryEffect />
-                    </Entry.Effects>
                 </Entry>
 
                 <Button Margin="20,0,20,0" 
                          HeightRequest="50" 
                          TextColor="White" 
                          Text="Login"  
+                         CornerRadius="12"
                          BackgroundColor="{StaticResource primary}"
                          HorizontalOptions="FillAndExpand"/>
 
@@ -48,12 +42,13 @@
                          HeightRequest="50" 
                          TextColor="White" 
                          Text="Register"  Clicked="Handle_Clicked"
-                         BackgroundColor="Gray"
+                         CornerRadius="12"
+                         BackgroundColor="{StaticResource primary}"
                          HorizontalOptions="FillAndExpand"/>
 
                 <Label Text="Forgot password" 
                         HorizontalOptions="Center" 
-                        TextColor="{StaticResource primary}"/>
+                        TextColor="Blue"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
