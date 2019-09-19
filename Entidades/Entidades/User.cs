@@ -2,16 +2,16 @@
 
 namespace Entidades.Entidades
 {
-    public static class User
+    public class User
     {
-        public static string username { get; set; }
+        public string Username { get; set; }
 
-        public static string password { get; set; }
+        public string Password { get; set; }
         
-        public static string email { get; set; }
+        public string Email { get; set; }
 
-        public static DateTime date { get; set; }
+        public DateTime Date { get; set; }
 
-        public static string token { get; set; }
+        public string Token { get; set; }
     }
 }

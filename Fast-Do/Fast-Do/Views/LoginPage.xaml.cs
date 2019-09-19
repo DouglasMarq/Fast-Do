@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fast_Do.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,11 @@ namespace Fast_Do.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
+        LoginPageViewModel ctx = new LoginPageViewModel();
         public LoginPage()
         {
             InitializeComponent();
+            BindingContext = ctx;
         }
 
         private async void Register_Clicked(object sender, System.EventArgs e)
@@ -39,7 +42,8 @@ namespace Fast_Do.Views
 
         private async void Login_Clicked(object sender, System.EventArgs e)
         {
-            ((App)App.Current).MainPage = new MainPage();
+            await ctx.Login(UserEntry.Text, PassEntry.Text);
+            //((App)App.Current).MainPage = new MainPage();
             //await Navigation.PushModalAsync(new SignUpPage());
         }
     }
