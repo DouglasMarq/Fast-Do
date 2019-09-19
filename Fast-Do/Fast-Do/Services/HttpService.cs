@@ -1,4 +1,4 @@
-﻿using Entidades.Entidades;
+﻿using Fast_Do.Models;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
@@ -21,8 +21,8 @@ namespace Fast_Do.Services
             //var request = CreateRequest("Login");
             var auth = new User()
             {
-                Username = username,
-                Password = password
+                username = username,
+                password = password
             };
             var json = JsonConvert.SerializeObject(auth);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -31,12 +31,11 @@ namespace Fast_Do.Services
 
         public static async Task<HttpResponseMessage> Register(string username, string password, string email)
         {
-            //var request = CreateRequest("Register");
             var register = new User()
             {
-                Username = username,
-                Password = password,
-                Email = email
+                username = username,
+                password = password,
+                email = email
             };
             var json = JsonConvert.SerializeObject(register);
             var content = new StringContent(json, Encoding.UTF8, "application/json");

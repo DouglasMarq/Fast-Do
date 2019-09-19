@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Entidades.Entidades
+namespace Fast_Do.Models
 {
     public class User
     {

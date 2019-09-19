@@ -1,4 +1,5 @@
-﻿using Fast_Do.ViewModels;
+﻿using Acr.UserDialogs;
+using Fast_Do.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace Fast_Do.Views
         {
             InitializeComponent();
             BindingContext = ctx;
+            Title = "Registro";
             if (!string.IsNullOrWhiteSpace(user))
             {
                 ctx.User = user;
@@ -40,9 +42,17 @@ namespace Fast_Do.Views
             }
         }
 
-        private void BtnRegistro_Clicked(object sender, EventArgs e)
+        private async void BtnRegistro_Clicked(object sender, EventArgs e)
         {
-            ctx.Register(UserEntry.Text, PassEntry.Text, EmailEntry.Text);
+            var result = await ctx.Register(UserEntry.Text, PassEntry.Text, EmailEntry.Text);
+            if (result)
+            {
+                await Navigation.PopToRootAsync();
+            }
+            else
+            {
+                UserDialogs.Instance.Alert("Conta já Existe.", "Aviso", "OK");
+            }
         }
     }
 }

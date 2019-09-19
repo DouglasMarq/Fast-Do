@@ -1,4 +1,6 @@
-﻿using Fast_Do.Services;
+﻿using Fast_Do.Models;
+using Fast_Do.Services;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -10,17 +12,28 @@ namespace Fast_Do.ViewModels
     public class LoginPageViewModel : BaseViewModel
     {
         private static HttpClient _httpClient;
-        public async Task Login(string username, string password)
+        public async Task<bool> Login(string username, string password)
         {
             _httpClient = new HttpClient();
             HttpService.CreateHttp(_httpClient);
             var response = await HttpService.Login(username, password);
             if (response.IsSuccessStatusCode)
             {
-                var content = response.Content;
+                var content = await response.Content.ReadAsStringAsync();
 
-                Console.WriteLine("do something");
+                Login login = JsonConvert.DeserializeObject<Login>(content);
+
+                var credentials = new Login()
+                {
+                    username = username,
+                    password = password,
+                    token = login.token,
+                };
+                new AccessLogin().Insert(credentials);
+
+                return true;
             }
+            return false;
         }
     }
 }

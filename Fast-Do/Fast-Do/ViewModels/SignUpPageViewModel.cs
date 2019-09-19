@@ -1,7 +1,9 @@
 ﻿using Fast_Do.Services;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Fast_Do.ViewModels
 {
@@ -29,17 +31,24 @@ namespace Fast_Do.ViewModels
         private string _user;
         private string _pass;
         private string _email;
+        private static HttpClient _httpClient;
         #endregion
 
-        public async void Register(string user, string pass, string email)
+        public async Task<bool> Register(string user, string pass, string email)
         {
             _user = user;
             _pass = pass;
             _email = email;
+            _httpClient = new HttpClient();
+            HttpService.CreateHttp(_httpClient);
             var content = await HttpService.Register(user, pass, email);
             if (content.IsSuccessStatusCode)
             {
-                var test = content.Content;
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

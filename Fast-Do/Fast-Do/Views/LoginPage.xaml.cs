@@ -1,4 +1,5 @@
-﻿using Fast_Do.ViewModels;
+﻿using Acr.UserDialogs;
+using Fast_Do.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,15 +37,21 @@ namespace Fast_Do.Views
             }
             else
             {
-                await Navigation.PushAsync(new NavigationPage(new SignUpPage()));
+                await Navigation.PushAsync(new SignUpPage());
             }
         }
 
         private async void Login_Clicked(object sender, System.EventArgs e)
         {
-            await ctx.Login(UserEntry.Text, PassEntry.Text);
-            //((App)App.Current).MainPage = new MainPage();
-            //await Navigation.PushModalAsync(new SignUpPage());
+            var result = await ctx.Login(UserEntry.Text, PassEntry.Text);
+            if (result)
+            {
+                ((App)App.Current).MainPage = new MainPage();
+            }
+            else
+            {
+                UserDialogs.Instance.Alert("Credenciais erradas.", "Aviso", "OK");
+            }
         }
     }
 }
