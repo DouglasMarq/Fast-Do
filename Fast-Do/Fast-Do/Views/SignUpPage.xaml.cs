@@ -39,5 +39,10 @@ namespace Fast_Do.Views
                 ctx.Pass = null;
             }
         }
+
+        private void BtnRegistro_Clicked(object sender, EventArgs e)
+        {
+            ctx.Register(UserEntry.Text, PassEntry.Text, EmailEntry.Text);
+        }
     }
 }

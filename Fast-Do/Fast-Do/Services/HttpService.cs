@@ -36,9 +36,7 @@ namespace Fast_Do.Services
             {
                 Username = username,
                 Password = password,
-                Email = email,
-                Date = DateTime.Now,
-                Token = null
+                Email = email
             };
             var json = JsonConvert.SerializeObject(register);
             var content = new StringContent(json, Encoding.UTF8, "application/json");

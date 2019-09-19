@@ -5,11 +5,46 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Fast_Do.Views.SignUpPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primary">#474545</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry 
+                x:Name="EmailEntry"
+                Placeholder="Email"
+                Text="{Binding Email}"
+                Margin="0,20,0,0"
+                />
+
+            <Entry 
+                x:Name="UserEntry"
+                Placeholder="Usuario"
+                Text="{Binding User}"
+                Margin="0,20,0,0"
+                />
+
+            <Entry 
+                x:Name="PassEntry"
+                Placeholder="Senha"
+                Text="{Binding Pass}"
+                Margin="0,40,0,0"
+                IsPassword="True"
+                />
+
+            <Button
+                x:Name="btnRegistro"
+                Text="Registrar" 
+                CornerRadius="12"
+                Margin="0,60,0,0"
+                HeightRequest="50" 
+                TextColor="White" 
+                Clicked="BtnRegistro_Clicked"
+                BackgroundColor="{StaticResource primary}"
+                HorizontalOptions="FillAndExpand"
+                />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
