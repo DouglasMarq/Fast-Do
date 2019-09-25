@@ -4,49 +4,47 @@
              xmlns:local="clr-namespace:Fast_Do.Effects"
              NavigationPage.HasNavigationBar="False"
              x:Class="Fast_Do.Views.LoginPage">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="primary">#474545</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView BackgroundColor="#696565">
+        <ScrollView BackgroundColor="#ecf0f1">
             <StackLayout Spacing="10">
                 <Label HeightRequest="110"  
                           HorizontalOptions="FillAndExpand" 
                           Text="Fast-Do" 
-                          BackgroundColor="{StaticResource primary}"
-                          TextColor="White" 
+                          BackgroundColor="#bdc3c7"
+                          TextColor="Black" 
                           FontSize="40" 
                           HorizontalTextAlignment="Center"
                           VerticalTextAlignment="Center"/>
 
-                <Entry  Margin="20,40,20,0" 
+                <Frame>
+                    <Entry  Margin="20,40,20,0" 
                          HeightRequest="50" 
                          Placeholder="E-mail"
                         x:Name="UserEntry">
-                </Entry>
-
-                <Entry Margin="20,0,20,0" 
+                    </Entry>
+                </Frame>
+                <Frame>
+                    <Entry Margin="20,0,20,0" 
                         HeightRequest="50" IsPassword="true"
                         Placeholder="Password"
                        x:Name="PassEntry">
-                </Entry>
+                    </Entry>
+                </Frame>
 
                 <Button Margin="20,0,20,0" 
                          HeightRequest="50" 
-                         TextColor="White" 
+                         TextColor="Black" 
                          Text="Login"  Clicked="Login_Clicked"
                          CornerRadius="12"
-                         BackgroundColor="{StaticResource primary}"
+                         BackgroundColor="#0984e3"
                          HorizontalOptions="FillAndExpand"/>
 
                 <Button Margin="20,0,20,0" 
                          HeightRequest="50" 
-                         TextColor="White" 
+                         TextColor="Black" 
                          Text="Register"  Clicked="Register_Clicked"
                          CornerRadius="12"
-                         BackgroundColor="{StaticResource primary}"
+                         BackgroundColor="#0984e3"
                          HorizontalOptions="FillAndExpand"/>
 
                 <!--<Label Text="Esqueci minha senha" 
