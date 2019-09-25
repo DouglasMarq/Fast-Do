@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Fast_Do.Services;
 using Fast_Do.Views;
+using Fast_Do.Models;
 
 namespace Fast_Do
 {
@@ -14,7 +15,14 @@ namespace Fast_Do
 #if DEBUG
             HotReloader.Current.Run(this);
 #endif
-            MainPage = new NavigationPage(new LoginPage());
+            if(new AccessLogin().Count() > 0)
+            {
+                ((App)App.Current).MainPage = new MainPage();
+            }
+            else
+            {
+                MainPage = new NavigationPage(new LoginPage());
+            }
         }
 
         protected override void OnStart()
