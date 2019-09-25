@@ -5,7 +5,7 @@
              NavigationPage.HasNavigationBar="False"
              x:Class="Fast_Do.Views.LoginPage">
     <ContentPage.Content>
-        <ScrollView BackgroundColor="#ecf0f1">
+        <ScrollView>
             <StackLayout Spacing="10">
                 <Label HeightRequest="110"  
                           HorizontalOptions="FillAndExpand" 
@@ -16,15 +16,23 @@
                           HorizontalTextAlignment="Center"
                           VerticalTextAlignment="Center"/>
 
-                <Frame>
-                    <Entry  Margin="20,40,20,0" 
+                <Frame 
+                    HasShadow="True" 
+                    Margin="20,0,20,0"
+                    CornerRadius="12"
+                    >
+                    <Entry
                          HeightRequest="50" 
                          Placeholder="E-mail"
                         x:Name="UserEntry">
                     </Entry>
                 </Frame>
-                <Frame>
-                    <Entry Margin="20,0,20,0" 
+                <Frame 
+                    HasShadow="True" 
+                    Margin="20,0,20,0"
+                    CornerRadius="12"
+                    >
+                    <Entry
                         HeightRequest="50" IsPassword="true"
                         Placeholder="Password"
                        x:Name="PassEntry">
