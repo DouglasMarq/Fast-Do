@@ -12,58 +12,64 @@
              x:Class="Fast_Do.Views.LoginPage">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Spacing="10">
-                <Label HeightRequest="110"  
-                          HorizontalOptions="FillAndExpand" 
-                          Text="Fast-Do" 
-                          BackgroundColor="#bdc3c7"
-                          TextColor="Black" 
-                          FontSize="40" 
-                          HorizontalTextAlignment="Center"
-                          VerticalTextAlignment="Center"/>
-                <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="80*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <StackLayout Orientation="Vertical">
-                        <material:MaterialTextField
-                        HeightRequest="50" 
-                        Placeholder="E-mail"
-                        Grid.Column="0"
-                        Grid.Row="0"
-                        InputType="Email"
-                        BackgroundColor="Transparent"
-                        x:Name="UserEntry">
+            <Grid HorizontalOptions="FillAndExpand" 
+                  VerticalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="50*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <material:MaterialCard HasShadow="True" 
+                                       Elevation="8" 
+                                       HorizontalOptions="FillAndExpand" 
+                                       CornerRadius="5">
+                    <Label HeightRequest="110"  
+                           HorizontalOptions="FillAndExpand" 
+                           Text="Fast-Do" 
+                           Grid.Column="0"
+                           BackgroundColor="#bdc3c7"
+                           TextColor="Black" 
+                           FontSize="40" 
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"/>
+                </material:MaterialCard>
+                    <StackLayout Orientation="Vertical" 
+                                 Grid.Column="0" 
+                                 Grid.Row="1">
+                        <material:MaterialTextField Margin="30,150,30,10"
+                                                HeightRequest="50" 
+                                                Placeholder="E-mail"
+                                                InputType="Email"
+                                                BackgroundColor="Transparent"
+                                                x:Name="UserEntry">
                         </material:MaterialTextField>
-
-                        <material:MaterialTextField
-                        HeightRequest="50" 
-                        InputType="Password"
-                        Grid.Column="0"
-                        Grid.Row="0"
-                        Placeholder="Password"
-                        BackgroundColor="Transparent"
-                       x:Name="PassEntry">
+                        <material:MaterialTextField Margin="30,20,30,0"
+                                                HeightRequest="50" 
+                                                InputType="Password"
+                                                Placeholder="Password"
+                                                BackgroundColor="Transparent"
+                                                x:Name="PassEntry">
                         </material:MaterialTextField>
                     </StackLayout>
-                </Grid>
                 <material:MaterialButton Margin="20,0,20,0" 
-                         HeightRequest="50"
-                         ButtonType="Elevated"
-                         Elevation="4"
-                         CornerRadius="12"
-                         Text="Login"  Clicked="Login_Clicked"
-                         HorizontalOptions="FillAndExpand"/>
-
+                                         ButtonType="Elevated"
+                                         Elevation="4"
+                                         CornerRadius="12"
+                                         Grid.Column="0"
+                                         Grid.Row="2"
+                                         Text="Login"  Clicked="Login_Clicked"
+                                         HorizontalOptions="FillAndExpand"/>
                 <material:MaterialButton Margin="20,0,20,0" 
-                         HeightRequest="50" 
-                         ButtonType="Text"
-                         Text="Register"  Clicked="Register_Clicked"
-                         HorizontalOptions="FillAndExpand"/>
-            </StackLayout>
+                                         Grid.Column="0"
+                                         Grid.Row="3"
+                                         ButtonType="Text"
+                                         Text="Register"  Clicked="Register_Clicked"
+                                         HorizontalOptions="FillAndExpand"/>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
