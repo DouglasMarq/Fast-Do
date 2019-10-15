@@ -21,17 +21,15 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="50*" />
                     <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <material:MaterialCard HasShadow="True" 
                                        Elevation="8" 
                                        HorizontalOptions="FillAndExpand" 
-                                       CornerRadius="5">
+                                       CornerRadius="6">
                     <Label HeightRequest="110"  
                            HorizontalOptions="FillAndExpand" 
                            Text="Fast-Do" 
                            Grid.Column="0"
-                           BackgroundColor="#bdc3c7"
                            TextColor="Black" 
                            FontSize="40" 
                            HorizontalTextAlignment="Center"
@@ -42,8 +40,8 @@
                                  Grid.Row="1">
                         <material:MaterialTextField Margin="30,150,30,10"
                                                 HeightRequest="50" 
-                                                Placeholder="E-mail"
-                                                InputType="Email"
+                                                Placeholder="Username"
+                                                InputType="Default"
                                                 BackgroundColor="Transparent"
                                                 x:Name="UserEntry">
                         </material:MaterialTextField>
@@ -55,20 +53,25 @@
                                                 x:Name="PassEntry">
                         </material:MaterialTextField>
                     </StackLayout>
-                <material:MaterialButton Margin="20,0,20,0" 
-                                         ButtonType="Elevated"
-                                         Elevation="4"
-                                         CornerRadius="12"
-                                         Grid.Column="0"
-                                         Grid.Row="2"
-                                         Text="Login"  Clicked="Login_Clicked"
-                                         HorizontalOptions="FillAndExpand"/>
-                <material:MaterialButton Margin="20,0,20,0" 
-                                         Grid.Column="0"
-                                         Grid.Row="3"
-                                         ButtonType="Text"
-                                         Text="Register"  Clicked="Register_Clicked"
-                                         HorizontalOptions="FillAndExpand"/>
+                <StackLayout HorizontalOptions="FillAndExpand" 
+                             VerticalOptions="End"
+                             Orientation="Vertical"
+                             Grid.Column="0"
+                             Grid.Row="2">
+                    <material:MaterialButton Margin="25,0,25,0" 
+                                             ButtonType="Elevated"
+                                             Elevation="6"
+                                             HeightRequest="65"
+                                             BackgroundColor="#00d2d3"
+                                             CornerRadius="15"
+                                             Text="Login"  Clicked="Login_Clicked"
+                                             HorizontalOptions="FillAndExpand"/>
+                    <material:MaterialButton Margin="25,0,25,100" 
+                                             HeightRequest="50"
+                                             ButtonType="Text"
+                                             Text="Register"  Clicked="Register_Clicked"
+                                             HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
             </Grid>
         </ScrollView>
     </ContentPage.Content>

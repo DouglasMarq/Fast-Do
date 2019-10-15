@@ -1,13 +1,7 @@
-﻿using Acr.UserDialogs;
-using Fast_Do.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Fast_Do.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XF.Material.Forms.UI.Dialogs;
 
 namespace Fast_Do.Views
 {
@@ -43,14 +37,26 @@ namespace Fast_Do.Views
 
         private async void Login_Clicked(object sender, System.EventArgs e)
         {
-            var result = await ctx.Login(UserEntry.Text, PassEntry.Text);
-            if (result)
+            if(!string.IsNullOrWhiteSpace(UserEntry.Text) || (!string.IsNullOrWhiteSpace(PassEntry.Text)))
             {
-                ((App)App.Current).MainPage = new MainPage();
+                using (var dialog = await MaterialDialog.Instance.LoadingDialogAsync(message: "Carregando..."))
+                {
+                    var result = await ctx.Login(UserEntry.Text, PassEntry.Text);
+                    if (result)
+                    {
+                        await dialog.DismissAsync();
+                        ((App)App.Current).MainPage = new MainPage();
+                    }
+                    else
+                    {
+                        await dialog.DismissAsync();
+                        await MaterialDialog.Instance.AlertAsync(message: "Credenciais erradas.", title: "Aviso", acknowledgementText: "OK");
+                    }
+                }
             }
             else
             {
-                UserDialogs.Instance.Alert("Credenciais erradas.", "Aviso", "OK");
+                await MaterialDialog.Instance.AlertAsync(message: "Campo de Login e/ou Senha vazia(o).", title: "Aviso", acknowledgementText: "OK");
             }
         }
     }
