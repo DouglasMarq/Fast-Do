@@ -21,24 +21,29 @@
                           FontSize="40" 
                           HorizontalTextAlignment="Center"
                           VerticalTextAlignment="Center"/>
-
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80*" />
+                    </Grid.ColumnDefinitions>
                     <material:MaterialTextField
-                         HeightRequest="50" 
-                         Placeholder="E-mail"
+                        HeightRequest="50" 
+                        Placeholder="E-mail"
+                        Grid.Column="1"
                         InputType="Email"
                         BackgroundColor="Transparent"
                         x:Name="UserEntry">
                     </material:MaterialTextField>
-                
+
                     <material:MaterialTextField
                         HeightRequest="50" 
                         InputType="Password"
+                        Grid.Column="1"
                         Placeholder="Password"
                         BackgroundColor="Transparent"
                        x:Name="PassEntry">
                     </material:MaterialTextField>
-
-                    <material:MaterialButton Margin="20,0,20,0" 
+                </Grid>
+                <material:MaterialButton Margin="20,0,20,0" 
                          HeightRequest="50"
                          ButtonType="Elevated"
                          Elevation="4"
