@@ -3,6 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Fast_Do.Effects"
              NavigationPage.HasNavigationBar="False"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material" 
+             material:MaterialNavigationPage.AppBarColor="#2c3e50" 
+             material:MaterialNavigationPage.AppBarTitleTextFontFamily="Roboto" 
+             material:MaterialNavigationPage.AppBarTitleTextFontSize="14" 
+             material:MaterialNavigationPage.StatusBarColor="#1B3147" 
+             material:MaterialNavigationPage.AppBarTitleTextAlignment="Start"
              x:Class="Fast_Do.Views.LoginPage">
     <ContentPage.Content>
         <ScrollView>
@@ -16,48 +22,52 @@
                           HorizontalTextAlignment="Center"
                           VerticalTextAlignment="Center"/>
 
-                <Frame 
+                <material:MaterialCard 
                     HasShadow="True" 
                     Margin="20,0,20,0"
                     CornerRadius="12"
                     >
-                    <Entry
+                    <material:MaterialTextField
                          HeightRequest="50" 
                          Placeholder="E-mail"
+                        InputType="Default"
+                        BackgroundColor="Transparent"
                         x:Name="UserEntry">
-                    </Entry>
-                </Frame>
-                <Frame 
+                    </material:MaterialTextField>
+                </material:MaterialCard>
+                <material:MaterialCard 
                     HasShadow="True" 
                     Margin="20,0,20,0"
                     CornerRadius="12"
                     >
-                    <Entry
-                        HeightRequest="50" IsPassword="true"
+                    <material:MaterialTextField
+                        HeightRequest="50" 
+                        InputType="Password"
                         Placeholder="Password"
+                        BackgroundColor="Transparent"
                        x:Name="PassEntry">
-                    </Entry>
-                </Frame>
+                    </material:MaterialTextField>
+                </material:MaterialCard>
 
-                <Button Margin="20,0,20,0" 
+                <material:MaterialButton Margin="20,0,20,0" 
                          HeightRequest="50" 
                          TextColor="Black" 
                          Text="Login"  Clicked="Login_Clicked"
                          CornerRadius="12"
-                         BackgroundColor="#0984e3"
+                         BackgroundColor="Transparent"
+                         BorderColor="Black"
+                         BorderWidth="1"
                          HorizontalOptions="FillAndExpand"/>
 
-                <Button Margin="20,0,20,0" 
+                <material:MaterialButton Margin="20,0,20,0" 
                          HeightRequest="50" 
                          TextColor="Black" 
                          Text="Register"  Clicked="Register_Clicked"
                          CornerRadius="12"
-                         BackgroundColor="#0984e3"
+                         BackgroundColor="Transparent"
+                         BorderColor="Black"
+                         BorderWidth="1"
                          HorizontalOptions="FillAndExpand"/>
-
-                <!--<Label Text="Esqueci minha senha" 
-                        HorizontalOptions="Center" 
-                        TextColor="White"/>-->
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

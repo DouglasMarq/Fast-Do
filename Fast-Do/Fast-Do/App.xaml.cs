@@ -12,6 +12,7 @@ namespace Fast_Do
         public App()
         {
             InitializeComponent();
+            XF.Material.Forms.Material.Init(this);
 #if DEBUG
             HotReloader.Current.Run(this);
 #endif
