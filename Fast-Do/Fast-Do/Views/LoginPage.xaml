@@ -22,24 +22,14 @@
                           HorizontalTextAlignment="Center"
                           VerticalTextAlignment="Center"/>
 
-                <material:MaterialCard 
-                    HasShadow="True" 
-                    Margin="20,0,20,0"
-                    CornerRadius="12"
-                    >
                     <material:MaterialTextField
                          HeightRequest="50" 
                          Placeholder="E-mail"
-                        InputType="Default"
+                        InputType="Email"
                         BackgroundColor="Transparent"
                         x:Name="UserEntry">
                     </material:MaterialTextField>
-                </material:MaterialCard>
-                <material:MaterialCard 
-                    HasShadow="True" 
-                    Margin="20,0,20,0"
-                    CornerRadius="12"
-                    >
+                
                     <material:MaterialTextField
                         HeightRequest="50" 
                         InputType="Password"
@@ -47,26 +37,19 @@
                         BackgroundColor="Transparent"
                        x:Name="PassEntry">
                     </material:MaterialTextField>
-                </material:MaterialCard>
 
-                <material:MaterialButton Margin="20,0,20,0" 
-                         HeightRequest="50" 
-                         TextColor="Black" 
-                         Text="Login"  Clicked="Login_Clicked"
+                    <material:MaterialButton Margin="20,0,20,0" 
+                         HeightRequest="50"
+                         ButtonType="Elevated"
+                         Elevation="4"
                          CornerRadius="12"
-                         BackgroundColor="Transparent"
-                         BorderColor="Black"
-                         BorderWidth="1"
+                         Text="Login"  Clicked="Login_Clicked"
                          HorizontalOptions="FillAndExpand"/>
 
                 <material:MaterialButton Margin="20,0,20,0" 
                          HeightRequest="50" 
-                         TextColor="Black" 
+                         ButtonType="Text"
                          Text="Register"  Clicked="Register_Clicked"
-                         CornerRadius="12"
-                         BackgroundColor="Transparent"
-                         BorderColor="Black"
-                         BorderWidth="1"
                          HorizontalOptions="FillAndExpand"/>
             </StackLayout>
         </ScrollView>
