@@ -9,7 +9,6 @@ namespace Fast_Do.Models
         Browse,
         Favorite,
         About,
-        Logout,
     }
     public class HomeMenuItem
     {

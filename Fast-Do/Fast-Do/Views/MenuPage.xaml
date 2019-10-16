@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material" 
              x:Class="Fast_Do.Views.MenuPage"
              Title="Menu">
              
@@ -27,5 +28,14 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <material:MaterialButton x:Name="LogoutBtn"
+                                 Clicked="LogoutBtn_Clicked"
+                                 CornerRadius="15"
+                                 ButtonType="Elevated"
+                                 Elevation="8"
+                                 Text="Logout"
+                                 BackgroundColor="White"
+                                 VerticalOptions="End" 
+                                 HorizontalOptions="Center"/>
     </StackLayout>
 </ContentPage>

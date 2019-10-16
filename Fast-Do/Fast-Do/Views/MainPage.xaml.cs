@@ -37,9 +37,6 @@ namespace Fast_Do.Views
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
-                    case (int)MenuItemType.Logout:
-                        ((App)App.Current).MainPage = new NavigationPage(new LoginPage());
-                        break;
                 }
             }
 

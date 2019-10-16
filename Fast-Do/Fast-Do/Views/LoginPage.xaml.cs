@@ -1,5 +1,6 @@
 ﻿using Fast_Do.Negocio;
 using Fast_Do.ViewModels;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XF.Material.Forms.UI.Dialogs;
@@ -40,22 +41,27 @@ namespace Fast_Do.Views
         {
             if (!string.IsNullOrWhiteSpace(UserEntry.Text) || (!string.IsNullOrWhiteSpace(PassEntry.Text)))
             {
-                UserDialogsUtils.ShowLoading("Carregando...");
-                var result = await ctx.Login(UserEntry.Text, PassEntry.Text);
-                if (result)
+                await UserDialogsUtils.ShowLoading("Carregando...");
+#pragma warning disable CS4014 // Como esta chamada não é esperada, a execução do método atual continua antes de a chamada ser concluída
+                Task.Run(async () =>
                 {
-                    UserDialogsUtils.HideLoading();
-                    ((App)App.Current).MainPage = new MainPage();
-                }
-                else
-                {
-                    UserDialogsUtils.HideLoading();
-                    UserDialogsUtils.ShowSnackbar("Credenciais erradas.");
-                }
+                    var result = await ctx.Login(UserEntry.Text, PassEntry.Text);
+                    if (result)
+                    {
+                        await UserDialogsUtils.HideLoading();
+                        Device.BeginInvokeOnMainThread(() => ((App)App.Current).MainPage = new MainPage()); 
+                    }
+                    else
+                    {
+                        await UserDialogsUtils.HideLoading();
+                        await UserDialogsUtils.ShowSnackbar("Credenciais erradas.");
+                    }
+                });
+#pragma warning restore CS4014 // Como esta chamada não é esperada, a execução do método atual continua antes de a chamada ser concluída
             }
             else
             {
-                UserDialogsUtils.ShowSnackbar("Campo de Login e/ou Senha vazia(o).");
+                await UserDialogsUtils.ShowSnackbar("Campo de Login e/ou Senha vazia(o).");
             }
         }
     }

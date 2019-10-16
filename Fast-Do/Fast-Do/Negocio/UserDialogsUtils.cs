@@ -1,4 +1,5 @@
-﻿using XF.Material.Forms.UI.Dialogs;
+﻿using System.Threading.Tasks;
+using XF.Material.Forms.UI.Dialogs;
 
 namespace Fast_Do.Negocio
 {
@@ -6,30 +7,34 @@ namespace Fast_Do.Negocio
     {
         private static IMaterialModalPage Loading;
 
-        public async static void ShowSnackbar(string title)
+        public async static Task ShowSnackbar(string title)
         {
-            await MaterialDialog.Instance.SnackbarAsync(message: title, msDuration: MaterialSnackbar.DurationLong);
+            await Task.Run(async () => await MaterialDialog.Instance.SnackbarAsync(message: title, msDuration: MaterialSnackbar.DurationLong));
+            Task.FromResult<object>(null);
         }
 
-        public async static void ShowAlert(string message, string title = "Aviso", string text = "OK")
+        public async static Task ShowAlert(string message, string title = "Aviso", string text = "OK")
         {
-            await MaterialDialog.Instance.AlertAsync(message: message,
+            await Task.Run(async () =>  await MaterialDialog.Instance.AlertAsync(message: message,
                                     title: title,
-                                    acknowledgementText: text);
+                                    acknowledgementText: text));
+            Task.FromResult<object>(null);
         }
 
-        public async static void ShowLoading(string message)
+        public async static Task ShowLoading(string message)
         {
-            Loading = await MaterialDialog.Instance.LoadingDialogAsync(message: message);
+            await Task.Run(async () => Loading = await MaterialDialog.Instance.LoadingDialogAsync(message: message));
+            Task.FromResult<object>(null);
         }
 
-        public async static void HideLoading()
+        public async static Task HideLoading()
         {
-            await Loading.DismissAsync();
+            await Task.Run(async () => await Loading.DismissAsync());
+            Task.FromResult<object>(null);
         }
 
         //@TODO
-        public async static void ShowConfirm()
+        public async static Task ShowConfirm()
         {
 
         }

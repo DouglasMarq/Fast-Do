@@ -4,6 +4,7 @@
             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             mc:Ignorable="d"
+            xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material" 
             xmlns:views="clr-namespace:Fast_Do.Views"
             x:Class="Fast_Do.Views.MainPage">
 
