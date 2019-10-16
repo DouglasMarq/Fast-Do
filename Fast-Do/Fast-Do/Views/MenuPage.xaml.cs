@@ -29,13 +29,13 @@ namespace Fast_Do.Views
 
             ListViewMenu.ItemsSource = menuItems;
 
-            ListViewMenu.SelectedItem = menuItems[0];
             ListViewMenu.ItemSelected += async (sender, e) =>
             {
                 if (e.SelectedItem == null)
                     return;
 
                 var id = (int)((HomeMenuItem)e.SelectedItem).Id;
+                ListViewMenu.SelectedItem = null;
                 await RootPage.NavigateFromMenu(id);
             };
         }

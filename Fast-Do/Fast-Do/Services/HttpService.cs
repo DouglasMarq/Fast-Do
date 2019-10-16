@@ -18,15 +18,15 @@ namespace Fast_Do.Services
 
         public static async Task<HttpResponseMessage> Login(string username, string password)
         {
-            //var request = CreateRequest("Login");
             var auth = new User()
             {
                 username = username,
                 password = password
             };
-            var json = JsonConvert.SerializeObject(auth);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-            return await _httpClient.PostAsync(API.LoginApi, content).ConfigureAwait(false);
+            return await _httpClient.PostAsync(API.LoginApi, 
+                new StringContent(JsonConvert.SerializeObject(auth), 
+                Encoding.UTF8, 
+                "application/json")).ConfigureAwait(false);
         }
 
         public static async Task<HttpResponseMessage> Register(string username, string password, string email)
@@ -37,9 +37,9 @@ namespace Fast_Do.Services
                 password = password,
                 email = email
             };
-            var json = JsonConvert.SerializeObject(register);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-            return await _httpClient.PostAsync(API.RegisterApi, content).ConfigureAwait(false);
+            return await _httpClient.PostAsync(API.RegisterApi, new StringContent(JsonConvert.SerializeObject(register), 
+                Encoding.UTF8, 
+                "application/json")).ConfigureAwait(false);
         }
 
         private static HttpRequestMessage CreateRequest(string type)
