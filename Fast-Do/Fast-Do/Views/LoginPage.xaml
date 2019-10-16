@@ -62,12 +62,12 @@
                                              ButtonType="Elevated"
                                              Elevation="6"
                                              HeightRequest="65"
-                                             BackgroundColor="#00d2d3"
+                                             BackgroundColor="#444444"
                                              CornerRadius="15"
                                              Text="Login"  Clicked="Login_Clicked"
                                              HorizontalOptions="FillAndExpand"/>
                     <material:MaterialButton Margin="25,0,25,90" 
-                                             HeightRequest="50"
+                                             HeightRequest="65"
                                              ButtonType="Text"
                                              Text="Register"  Clicked="Register_Clicked"
                                              HorizontalOptions="FillAndExpand"/>

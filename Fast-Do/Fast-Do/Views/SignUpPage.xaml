@@ -60,9 +60,9 @@
                 Elevation="8"
                 CornerRadius="15"
                 HeightRequest="65"
-                BackgroundColor="#00d2d3"
+                BackgroundColor="#444444"
                 Margin="25,60,25,0" 
-                TextColor="Black" 
+                TextColor="White" 
                 Clicked="BtnRegistro_Clicked"
                 HorizontalOptions="FillAndExpand"
                 />

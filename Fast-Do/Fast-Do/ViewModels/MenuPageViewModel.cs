@@ -11,7 +11,7 @@ namespace Fast_Do.ViewModels
     {
         public void Logout()
         {
-            Device.BeginInvokeOnMainThread(() => ((App)App.Current).MainPage = new LoginPage());
+            Device.BeginInvokeOnMainThread(() => ((App)App.Current).MainPage = new NavigationPage(new LoginPage()));
             new AccessLogin().DeleteAll();
         }
     }
