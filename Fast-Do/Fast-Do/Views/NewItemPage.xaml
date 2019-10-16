@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material" 
              mc:Ignorable="d"
              x:Class="Fast_Do.Views.NewItemPage"
              Title="Nova Anotação">
@@ -15,9 +16,9 @@
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Título" x:Name="lblTitle" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
-            <Entry Text="{Binding Item.Text}" Placeholder="Título" x:Name="txtTitle" FontSize="Small" />
+            <material:MaterialTextField Text="{Binding Item.Text}" Placeholder="Título" x:Name="txtTitle" />
             <Label Text="Descrição" FontSize="Medium" x:Name="lblText" HorizontalOptions="CenterAndExpand"/>
-            <Entry Text="{Binding Item.Description}" x:Name="txtDesc" Placeholder="Anotação" FontSize="Small" Margin="0" />
+            <material:MaterialTextField Text="{Binding Item.Description}" x:Name="txtDesc" Placeholder="Anotação" Margin="0" />
         </StackLayout>
     </ContentPage.Content>
     
