@@ -4,49 +4,68 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material" 
              NavigationPage.HasNavigationBar="True"
              NavigationPage.HasBackButton="True"
              x:Class="Fast_Do.Views.SignUpPage">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="primary">#474545</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Entry 
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <material:MaterialTextField 
+                Grid.Column="0"
+                Grid.Row="0"
                 x:Name="EmailEntry"
                 Placeholder="Email"
                 Text="{Binding Email}"
-                Margin="0,20,0,0"
+                Margin="35,40,35,0"
+                BackgroundColor="Transparent"
                 />
 
-            <Entry 
+            <material:MaterialTextField 
+                Grid.Column="0"
+                Grid.Row="1"
                 x:Name="UserEntry"
-                Placeholder="Usuario"
+                Placeholder="Username"
+                BackgroundColor="Transparent"
                 Text="{Binding User}"
-                Margin="0,20,0,0"
+                Margin="35,20,35,0"
                 />
 
-            <Entry 
+            <material:MaterialTextField 
+                Grid.Column="0"
+                Grid.Row="2"
                 x:Name="PassEntry"
-                Placeholder="Senha"
+                Placeholder="Password"
                 Text="{Binding Pass}"
-                Margin="0,40,0,0"
-                IsPassword="True"
+                BackgroundColor="Transparent"
+                Margin="35,20,35,0"
+                InputType="Password"
                 />
 
-            <Button
+            <material:MaterialButton
+                Grid.Column="0"
+                Grid.Row="3"
                 x:Name="btnRegistro"
                 Text="Registrar" 
-                CornerRadius="12"
-                Margin="0,60,0,0"
-                HeightRequest="50" 
-                TextColor="White" 
+                ButtonType="Elevated"
+                Elevation="8"
+                CornerRadius="15"
+                HeightRequest="65"
+                BackgroundColor="#00d2d3"
+                Margin="25,60,25,0" 
+                TextColor="Black" 
                 Clicked="BtnRegistro_Clicked"
-                BackgroundColor="{StaticResource primary}"
                 HorizontalOptions="FillAndExpand"
                 />
-        </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

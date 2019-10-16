@@ -1,4 +1,5 @@
-﻿using Fast_Do.ViewModels;
+﻿using Fast_Do.Negocio;
+using Fast_Do.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XF.Material.Forms.UI.Dialogs;
@@ -37,26 +38,24 @@ namespace Fast_Do.Views
 
         private async void Login_Clicked(object sender, System.EventArgs e)
         {
-            if(!string.IsNullOrWhiteSpace(UserEntry.Text) || (!string.IsNullOrWhiteSpace(PassEntry.Text)))
+            if (!string.IsNullOrWhiteSpace(UserEntry.Text) || (!string.IsNullOrWhiteSpace(PassEntry.Text)))
             {
-                using (var dialog = await MaterialDialog.Instance.LoadingDialogAsync(message: "Carregando..."))
+                UserDialogsUtils.ShowLoading("Carregando...");
+                var result = await ctx.Login(UserEntry.Text, PassEntry.Text);
+                if (result)
                 {
-                    var result = await ctx.Login(UserEntry.Text, PassEntry.Text);
-                    if (result)
-                    {
-                        await dialog.DismissAsync();
-                        ((App)App.Current).MainPage = new MainPage();
-                    }
-                    else
-                    {
-                        await dialog.DismissAsync();
-                        await MaterialDialog.Instance.AlertAsync(message: "Credenciais erradas.", title: "Aviso", acknowledgementText: "OK");
-                    }
+                    UserDialogsUtils.HideLoading();
+                    ((App)App.Current).MainPage = new MainPage();
+                }
+                else
+                {
+                    UserDialogsUtils.HideLoading();
+                    UserDialogsUtils.ShowSnackbar("Credenciais erradas.");
                 }
             }
             else
             {
-                await MaterialDialog.Instance.AlertAsync(message: "Campo de Login e/ou Senha vazia(o).", title: "Aviso", acknowledgementText: "OK");
+                UserDialogsUtils.ShowSnackbar("Campo de Login e/ou Senha vazia(o).");
             }
         }
     }

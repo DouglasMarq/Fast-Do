@@ -22,7 +22,8 @@ namespace Fast_Do.Views
             {
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Anotações" },
                 new HomeMenuItem {Id = MenuItemType.Favorite, Title="Favoritos" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="Sobre" }
+                new HomeMenuItem {Id = MenuItemType.About, Title="Sobre" },
+                new HomeMenuItem {Id = MenuItemType.Logout, Title="Sair" }
             };
 
             ListViewMenu.ItemsSource = menuItems;

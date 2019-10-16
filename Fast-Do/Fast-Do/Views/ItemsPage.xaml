@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:custom="clr-namespace:Fast_Do.Views.Custom"
              mc:Ignorable="d"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              x:Class="Fast_Do.Views.ItemsPage"
              Title="{Binding Title}"
              x:Name="BrowseItemsPage">
@@ -22,7 +23,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame Padding="0" Margin="5" HasShadow="True" CornerRadius="0">
+                        <material:MaterialCard Padding="0" Margin="5" HasShadow="True" CornerRadius="0">
                             <StackLayout Padding="0" Orientation="Horizontal" Margin="0">
                                 <BoxView Color="{Binding BoxColor}" WidthRequest="4" Margin="0"/>
                                 <Grid VerticalOptions="FillAndExpand" Padding="0" Margin="0" HorizontalOptions="FillAndExpand" BackgroundColor="White">
@@ -49,11 +50,10 @@
                                     </StackLayout>
                                 </Grid>
                             </StackLayout>
-                        </Frame>
+                        </material:MaterialCard>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
-
 </ContentPage>

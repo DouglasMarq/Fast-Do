@@ -38,7 +38,7 @@
                     <StackLayout Orientation="Vertical" 
                                  Grid.Column="0" 
                                  Grid.Row="1">
-                        <material:MaterialTextField Margin="30,150,30,10"
+                        <material:MaterialTextField Margin="30,100,30,10"
                                                 HeightRequest="50" 
                                                 Placeholder="Username"
                                                 InputType="Default"

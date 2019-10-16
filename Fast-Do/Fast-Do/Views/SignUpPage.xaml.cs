@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using Fast_Do.Negocio;
 using Fast_Do.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XF.Material.Forms.UI.Dialogs;
 
 namespace Fast_Do.Views
 {
@@ -44,14 +46,18 @@ namespace Fast_Do.Views
 
         private async void BtnRegistro_Clicked(object sender, EventArgs e)
         {
+            UserDialogsUtils.ShowLoading("Criando...");
             var result = await ctx.Register(UserEntry.Text, PassEntry.Text, EmailEntry.Text);
             if (result)
             {
+                UserDialogsUtils.HideLoading();
+                UserDialogsUtils.ShowSnackbar("Conta criada com sucesso.");
                 await Navigation.PopToRootAsync();
             }
             else
             {
-                UserDialogs.Instance.Alert("Conta já Existe.", "Aviso", "OK");
+                UserDialogsUtils.HideLoading();
+                UserDialogsUtils.ShowSnackbar("Conta já existe.");
             }
         }
     }
