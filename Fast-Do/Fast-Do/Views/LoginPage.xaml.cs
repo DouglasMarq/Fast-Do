@@ -17,23 +17,23 @@ namespace Fast_Do.Views
             BindingContext = ctx;
         }
 
-        private async void Register_Clicked(object sender, System.EventArgs e)
+        private void Register_Clicked(object sender, System.EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(UserEntry.Text))
             {
-                await Navigation.PushAsync(new NavigationPage(new SignUpPage(UserEntry.Text)));
+                Navigation.PushAsync(new NavigationPage(new SignUpPage(UserEntry.Text)));
             }
             else if (!string.IsNullOrWhiteSpace(PassEntry.Text))
             {
-                await Navigation.PushAsync(new NavigationPage(new SignUpPage(null, PassEntry.Text)));
+                Navigation.PushAsync(new NavigationPage(new SignUpPage(null, PassEntry.Text)));
             }
             else if (!string.IsNullOrWhiteSpace(PassEntry.Text) && !string.IsNullOrWhiteSpace(PassEntry.Text))
             {
-                await Navigation.PushAsync(new NavigationPage(new SignUpPage(UserEntry.Text, PassEntry.Text)));
+                Navigation.PushAsync(new NavigationPage(new SignUpPage(UserEntry.Text, PassEntry.Text)));
             }
             else
             {
-                await Navigation.PushAsync(new SignUpPage());
+                Navigation.PushAsync(new SignUpPage());
             }
         }
 

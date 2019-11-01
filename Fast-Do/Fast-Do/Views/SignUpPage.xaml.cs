@@ -55,7 +55,7 @@ namespace Fast_Do.Views
                 {
                     await UserDialogsUtils.HideLoading();
                     await UserDialogsUtils.ShowSnackbar("Conta criada com sucesso.");
-                    await Navigation.PopToRootAsync();
+                    Navigation.PopAsync();
                 }
                 else
                 {
