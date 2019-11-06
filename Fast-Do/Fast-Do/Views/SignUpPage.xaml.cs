@@ -1,5 +1,4 @@
-﻿using Acr.UserDialogs;
-using Fast_Do.Negocio;
+﻿using Fast_Do.Negocio;
 using Fast_Do.ViewModels;
 using System;
 using System.Collections.Generic;

@@ -4,8 +4,8 @@ using Xamarin.Forms;
 
 using Fast_Do.Models;
 using Fast_Do.Services;
-using Acr.UserDialogs;
 using System.Collections.Generic;
+using Fast_Do.Negocio;
 
 namespace Fast_Do.Views
 {
@@ -44,11 +44,11 @@ namespace Fast_Do.Views
         {
             if (string.IsNullOrWhiteSpace(txtTitle.Text))
             {
-                UserDialogs.Instance.Alert("Campo Título está vazio", "Aviso", "OK");
+                UserDialogsUtils.ShowAlert("Campo Título está vazio", "Aviso", "OK");
             }
             else if (string.IsNullOrWhiteSpace(txtDesc.Text))
             {
-                UserDialogs.Instance.Alert("Campo Anotação está vazio", "Aviso", "OK");
+                UserDialogsUtils.ShowAlert("Campo Anotação está vazio", "Aviso", "OK");
             }
             else
             {
