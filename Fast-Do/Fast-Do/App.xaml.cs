@@ -13,9 +13,7 @@ namespace Fast_Do
         {
             InitializeComponent();
             XF.Material.Forms.Material.Init(this, "Material.Configuration");
-#if DEBUG
-            HotReloader.Current.Run(this);
-#endif
+
             if(new AccessLogin().Count() > 0)
             {
                 ((App)App.Current).MainPage = new MainPage();
