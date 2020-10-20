@@ -14,26 +14,27 @@ namespace Fast_Do.ViewModels
         private static HttpClient _httpClient;
         public async Task<bool> Login(string username, string password)
         {
-            _httpClient = new HttpClient();
-            HttpService.CreateHttp(_httpClient);
-            var response = await HttpService.Login(username, password);
-            if (response.IsSuccessStatusCode)
-            {
-                var content = await response.Content.ReadAsStringAsync();
+            return true;
+            //_httpClient = new HttpClient();
+            //HttpService.CreateHttp(_httpClient);
+            //var response = await HttpService.Login(username, password);
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    var content = await response.Content.ReadAsStringAsync();
 
-                Login login = JsonConvert.DeserializeObject<Login>(content);
+            //    Login login = JsonConvert.DeserializeObject<Login>(content);
 
-                var credentials = new Login()
-                {
-                    username = username,
-                    password = password,
-                    token = login.token,
-                };
-                new AccessLogin().Insert(credentials);
+            //    var credentials = new Login()
+            //    {
+            //        username = username,
+            //        password = password,
+            //        token = login.token,
+            //    };
+            //    new AccessLogin().Insert(credentials);
 
-                return true;
-            }
-            return false;
+            //    return true;
+            //}
+            //return false;
         }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Fast_Do.Services;
+﻿using Xamarin.Forms;
 using Fast_Do.Views;
 using Fast_Do.Models;
 
@@ -12,7 +9,8 @@ namespace Fast_Do
         public App()
         {
             InitializeComponent();
-            XF.Material.Forms.Material.Init(this, "Material.Configuration");
+
+            XF.Material.Forms.Material.Init(this);
 
             if(new AccessLogin().Count() > 0)
             {
