@@ -1,7 +1,7 @@
 ﻿using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
-using Android.Support.V4.Content;
+using AndroidX.Core.Content;
 using Fast_Do.Droid.Renderers;
 using Fast_Do.Views.Custom;
 using Xamarin.Forms;

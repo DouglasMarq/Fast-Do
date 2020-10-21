@@ -11,6 +11,7 @@ namespace Fast_Do
             InitializeComponent();
 
             XF.Material.Forms.Material.Init(this);
+            XF.Material.Forms.Material.Use("Material.Configuration");
 
             if(new AccessLogin().Count() > 0)
             {
